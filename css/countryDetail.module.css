@@ -1,0 +1,7 @@
+.flagimg{
+    margin: 20px;
+    max-width: 600px;
+    max-height: 300px;
+    border: 1px ridge black;
+    box-shadow: 4px 5px 13px -3px #000;
+}

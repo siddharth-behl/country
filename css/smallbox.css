@@ -1,0 +1,8 @@
+
+.smallbox{
+    max-height: 30px;
+}
+.smallbox:nth-child(1){
+    max-height: 90px;
+    margin-bottom: 20px;
+}
