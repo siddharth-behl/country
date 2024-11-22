@@ -3,7 +3,6 @@ import { createRoot } from "react-dom/client";
 import App from "./src/App.jsx";
 import Home from "./src/components/Home.jsx";
 import Contact from "./src/components/Contacts.jsx";
-
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import ErrorPage from "./src/components/Error.jsx";
 import CountryDetail from "./src/components/CountryDetail.jsx";

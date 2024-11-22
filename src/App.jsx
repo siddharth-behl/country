@@ -8,6 +8,7 @@ import LoadingBar from "..//contexts/LoadingBar.jsx";
 import MyLoadingBar from "./components/MyLoadingBar.jsx";
 import useNewtork from "..//hooks/useNetwork";
 import { useEffect, useState } from "react";
+import { Analytics } from "@vercel/analytics/react";
 
 export default function App() {
   const offline = useNewtork();
@@ -23,7 +24,7 @@ export default function App() {
   ) : (
     <>
       {start && <GIF />}
-
+      <Analytics/>
       <ThemeProvider>
         <LoadingBar>
           <MyLoadingBar />
