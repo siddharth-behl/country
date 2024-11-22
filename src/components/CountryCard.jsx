@@ -19,7 +19,7 @@ export default function CountryCard({
             style={{ position: "sticky", top: "0%" }}
           />
           <div className="card-text">
-            <h3 className="card-title">{countryName}</h3>
+            <h2 className="card-title" style={{textAlign:"center", transform:"translateX(-9px)"}}><b>{countryName}</b></h2>
             <p>
               <b>Population: </b>
               {population.toLocaleString("en-IN")}
