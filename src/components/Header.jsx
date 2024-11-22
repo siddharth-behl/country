@@ -22,7 +22,7 @@ export default function Header() {
     >
       <div className="header-content">
         <h2 className="title">
-          <Link to="/"><img src={logo} alt="CountryHunt" height="40vh"/></Link>
+          <Link to="/"><img src={logo} alt="CountryHunt" height="50vh"/></Link>
         </h2>
 
         <Link to="/contact">
