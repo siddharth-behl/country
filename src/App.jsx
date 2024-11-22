@@ -29,7 +29,7 @@ export default function App() {
     "You are offline"
   ) : (
     <>
-      {console.log(count.current)}
+      
       {count == 1 ? "" : <UseLoading />}
       <Analytics />
       <SpeedInsights />

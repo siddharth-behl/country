@@ -15,7 +15,7 @@ export default function CountryList({
 }) {
   const setProgress = useContext(LoadingContext)[1];
   const [noData, setNoData] = useState(true);
-  console.log(noData);
+ 
   useEffect(() => {
     setTimeout(() => {
       setNoData(false);
