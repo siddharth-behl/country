@@ -9,6 +9,7 @@ import CountryDetail from "./src/components/CountryDetail.jsx";
 import ShimmerData from "./src/components/ShimmerData.jsx";
 import ShimmerCard from "./src/components/ShimmerCard.jsx";
 import MyLoadingBar from "./src/components/MyLoadingBar.jsx";
+import MyLoadingPageProvider from "./contexts/MyLoadingPage.jsx";
 
 let root = createRoot(document.getElementById("root"));
 
@@ -24,9 +25,11 @@ const router = createBrowserRouter([
       { path: "/:country", element: <CountryDetail /> },
       { path: "/shimmer", element: <ShimmerData /> },
       { path: "/shimmerc", element: <ShimmerCard /> },
-      
-     
     ],
   },
 ]);
-root.render(<RouterProvider router={router} />);
+root.render(
+  <MyLoadingPageProvider>
+    <RouterProvider router={router} />
+  </MyLoadingPageProvider>
+);

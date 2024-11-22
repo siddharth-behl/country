@@ -7,25 +7,32 @@ import ThemeProvider from "..//contexts/ThemeContext.jsx";
 import LoadingBar from "..//contexts/LoadingBar.jsx";
 import MyLoadingBar from "./components/MyLoadingBar.jsx";
 import useNewtork from "..//hooks/useNetwork";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/react"
+import { SpeedInsights } from "@vercel/speed-insights/react";
+import MyLoadingPageProvider, {
+  MyLoadingPage,
+} from "../contexts/MyLoadingPage.jsx";
+import UseLoading from "./components/UseLoading.jsx";
 export default function App() {
   const offline = useNewtork();
-  const [start, setStart] = useState(true);
-  useEffect(() => {
-    setTimeout(()=>{setStart(false)},1500)
-  },[]);
+  let [count, setCount] = useContext(MyLoadingPage);
 
+  useEffect(() => {
+    setTimeout(() => {
+      setCount(1);
+    }, 1500);
+  }, []);
   // const size = useWindowWidth();
 
   return offline ? (
     "You are offline"
   ) : (
     <>
-      {start && <GIF />}
-      <Analytics/>
-      <SpeedInsights/>
+      {console.log(count.current)}
+      {count == 1 ? "" : <UseLoading />}
+      <Analytics />
+      <SpeedInsights />
       <ThemeProvider>
         <LoadingBar>
           <MyLoadingBar />

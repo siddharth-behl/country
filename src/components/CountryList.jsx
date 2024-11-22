@@ -1,9 +1,11 @@
-import { React, useContext, useEffect } from "react";
+import { React, useContext, useEffect, useState } from "react";
 
 import CountryCard from "./CountryCard";
 import { LoadingContext } from "../../contexts/LoadingBar.jsx";
 
 import useSort from "../../hooks/useSort.jsx";
+import ShimmerCard from "./ShimmerCard.jsx";
+
 export default function CountryList({
   FilteredCountries,
   setCountries,
@@ -12,8 +14,16 @@ export default function CountryList({
   setLoading,
 }) {
   const setProgress = useContext(LoadingContext)[1];
+  const [noData, setNoData] = useState(true);
+  console.log(noData);
   useEffect(() => {
-    if (sessionStorage.getItem("allData")) {
+    setTimeout(() => {
+      setNoData(false);
+    }, 100);
+  }, [FilteredCountries]);
+
+  useEffect(() => {
+    if (sessionStorage.getItem("allDatea")) {
       setCountries(JSON.parse(sessionStorage.getItem("allData")));
       setTimeout(() => {
         setProgress(100);
@@ -42,24 +52,28 @@ export default function CountryList({
   }, [none]);
 
   return (
-    <div className="countries-container">
-      {FilteredCountries.length > 0 ? (
-        useSort(FilteredCountries)?.map((country) => {
-          return (
-            <CountryCard
-              key={country.name.common}
-              countryName={country.name.common}
-              flagpng={country.flags.svg}
-              population={country.population}
-              region={country.region}
-              capital={country.capital?.[0]}
-              data={country}
-            />
-          );
-        })
-      ) : (
-        <h1>No data Found</h1>
-      )}
-    </div>
+    <>
+      <div className="countries-container">
+        {FilteredCountries.length > 0 ? (
+          useSort(FilteredCountries)?.map((country) => {
+            return (
+              <CountryCard
+                key={country.name.common}
+                countryName={country.name.common}
+                flagpng={country.flags.svg}
+                population={country.population}
+                region={country.region}
+                capital={country.capital?.[0]}
+                data={country}
+              />
+            );
+          })
+        ) : noData ? (
+          <ShimmerCard />
+        ) : (
+          <h1>No data Found</h1>
+        )}
+      </div>
+    </>
   );
 }

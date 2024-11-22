@@ -5,6 +5,7 @@ import { useState } from "react";
 import ShimmerCard from "./ShimmerCard.jsx";
 import useTheme from "../../hooks/useTheme";
 import useFilter from "../../hooks/useFilter.jsx";
+import { useOutletContext } from "react-router-dom";
 
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   const [filteredData, setFilterQuery] = useFilter(Countries, "name.common");
   const [mode] = useTheme();
+  
   
   
   return (
@@ -35,6 +37,8 @@ export default function Home() {
             none={none}
             setNone={setNone}
             setCountries={setCountries}
+            
+         
             
           />
         </main>
