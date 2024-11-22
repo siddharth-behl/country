@@ -22,11 +22,11 @@ export default function Header() {
     >
       <div className="header-content">
         <h2 className="title">
-          <Link to="/"><img src={logo} alt="CountryHunt" /></Link>
+          <Link to="/"><img src={logo} alt="CountryHunt" height="40vh"/></Link>
         </h2>
 
         <Link to="/contact">
-          <h3>Contact</h3>
+          <p>Contact</p>
         </Link>
         <p className="theme-changer" onClick={handleDark}>
           {mode ? (
