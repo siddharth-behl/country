@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom";
-
+import logo from  "../assets/Public/countryHunt.png"
 import useTheme from "../../hooks/useTheme";
 
 export default function Header() {
@@ -22,7 +22,7 @@ export default function Header() {
     >
       <div className="header-content">
         <h2 className="title">
-          <Link to="/">Where in the world?</Link>
+          <Link to="/"><img src={logo} alt="CountryHunt" /></Link>
         </h2>
 
         <Link to="/contact">
