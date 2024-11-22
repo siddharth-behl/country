@@ -34,7 +34,7 @@ export default function ShimmerData() {
 
                 <div className="details-text" style={{ overflow: "hidden" }}>
                   {Array.from({ length: 8 }).map((el, index) => {
-                    return <SmallBoxShine key={index} width="400px" />;
+                    return <SmallBoxShine key={index} width="350px" />;
                   })}
                 </div>
               </div>
