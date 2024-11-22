@@ -4,7 +4,7 @@ import Shine from "./Shine.jsx";
 import useTheme from "../../hooks/useTheme";
 
 export default function ShimmerCard() {
-  const [mode] =useTheme()
+  const [mode] = useTheme();
 
   return (
     <>
@@ -12,14 +12,7 @@ export default function ShimmerCard() {
         <div className="countries-container">
           {Array.from({ length: 50 }).map((el, ind) => {
             return (
-              <div
-                key={ind}
-                className="country-card shimmer"
-                style={{
-                  maxHeight: "433.61px",
-                  
-                }}
-              >
+              <div key={ind} className="country-card shimmer">
                 <div
                   className="img"
                   style={{
@@ -30,49 +23,53 @@ export default function ShimmerCard() {
                 >
                   <Shine />
                 </div>
-                <div style={{display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center"}}>
                 <div
                   style={{
-                    marginTop:"15px",
-                    width: "95%",
-                    height: "40px",
-                    backgroundColor: "#ccc",
-                    borderRadius:"8px"
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "center",
+                    alignItems: "center",
                   }}
-                ></div>
-                <div
-                  style={{
-                    marginTop:"10px",
-                    width: "95%",
-                    height: "20px",
-                    backgroundColor: "#ccc",
-                    borderRadius:"8px"
-                  }}
-                ></div>
-                <div
-                  style={{
-                    marginTop:"5px",
-                    width: "95%",
-                    height: "20px",
-                    backgroundColor: "#ccc",
-                    borderRadius:"8px"
-                  }}
-                ></div>
-                <div
-                  style={{
-                    marginTop:"5px",
-                    width: "45%",
-                    height: "20px",
-                    backgroundColor: "#ccc",
-                    borderRadius:"8px",
-                    alignSelf:"flex-start",
-                    marginLeft:"8px"
-
-                  }}
-                ></div>
+                >
+                  <div
+                    style={{
+                      marginTop: "15px",
+                      width: "95%",
+                      height: "40px",
+                      backgroundColor: "#ccc",
+                      borderRadius: "8px",
+                    }}
+                  ></div>
+                  <div
+                    style={{
+                      marginTop: "10px",
+                      width: "95%",
+                      height: "20px",
+                      backgroundColor: "#ccc",
+                      borderRadius: "8px",
+                    }}
+                  ></div>
+                  <div
+                    style={{
+                      marginTop: "5px",
+                      width: "95%",
+                      height: "20px",
+                      backgroundColor: "#ccc",
+                      borderRadius: "8px",
+                    }}
+                  ></div>
+                  <div
+                    style={{
+                      marginTop: "5px",
+                      width: "45%",
+                      height: "20px",
+                      backgroundColor: "#ccc",
+                      borderRadius: "8px",
+                      alignSelf: "flex-start",
+                      marginLeft: "8px",
+                    }}
+                  ></div>
                 </div>
-
-                
               </div>
             );
           })}

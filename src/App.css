@@ -95,9 +95,10 @@ a {
 }
 
 .country-card {
-  min-height: 48vh;
+  max-width: 48vh;
   display: inline-block;
   width: 19vw;
+  max-height: 433.61px;
   min-width: 300px;
   border-radius: 100px;
   overflow: hidden;
