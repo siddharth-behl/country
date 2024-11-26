@@ -23,8 +23,8 @@ export default function CountryList({
   }, [FilteredCountries]);
 
   useEffect(() => {
-    if (sessionStorage.getItem("allDatea")) {
-      setCountries(JSON.parse(sessionStorage.getItem("allData")));
+    if (localStorage.getItem("allDatea")) {
+      setCountries(JSON.parse(localStorage.getItem("allData")));
       setTimeout(() => {
         setProgress(100);
         setLoading(false);
@@ -41,7 +41,7 @@ export default function CountryList({
           setProgress(70);
           setCountries(data);
           setLoading(false);
-          sessionStorage.setItem("allData", JSON.stringify(data));
+          localStorage.setItem("allData", JSON.stringify(data));
           setProgress(100);
         });
     }
