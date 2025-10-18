@@ -23,15 +23,30 @@ export default function CountryList({
         setProgress(100);
         return;
       }
-      fetch("https://restcountries.com/v3.1/all")
+      // Specify all fields that your CountryCard uses
+      const fields = [
+        "name",
+        "flags",
+        "population",
+        "region",
+        "capital",
+        "languages",
+        "currencies",
+        "subregion",
+        "tld",
+        "continents",
+      ].join(",");
+  
+      fetch(`https://restcountries.com/v3.1/all?fields=${fields}`)
         .then((res) => {
           setProgress(30);
           return res.json();
         })
         .then((data) => {
+          console.log(data);
           setProgress(70);
           setCountries(data);
-
+  
           setLoading(false);
           sessionStorage.setItem("allData", JSON.stringify(data));
           setProgress(100);
@@ -42,6 +57,7 @@ export default function CountryList({
         });
     };
   }
+  
   useEffect(() => {
     setTimeout(() => {
       setNoData(false);
